@@ -1,5 +1,7 @@
 # FastLocation
 
+[![](https://jitpack.io/v/blisssayyid/FastLocation.svg)](https://jitpack.io/#blisssayyid/FastLocation)
+
 Helps you quickly implement positioning with Native API, Simple, fast and convenient
 
 Native API positioning is usually used to get the provider through `getBestProvider`
