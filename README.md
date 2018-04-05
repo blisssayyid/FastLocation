@@ -28,7 +28,7 @@ allprojects {
 And add the dependency
 ```
 dependencies {
-    implementation 'com.github.User:Repo:Tag'
+    implementation 'com.github.blisssayyid:FastLocation:0.0.1'
 }
 ```
 #### Base
