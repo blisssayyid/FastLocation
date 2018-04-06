@@ -51,14 +51,10 @@ mLocationEngine = LocationEngine().register(this, this)
 ```
 
 ##### Step3
-Implement ILocationListener Interface, it has six methods that you can implement separately
-* `getLastLocation(location: Location): Location`
-Get the final position, here you can filter again according to their own conditions
-, it is important to note that because the set conditions are not consistent
-, so the acquisition time is not stable, you can't use as a timer
-* `onLocationChanged(location: Location): Unit`
+Implement ILocationListener Interface, it has five methods that you can implement separately
+* `onLocationChanged(location: Location)`
 This method is called by a location change when the condition is met
-* `fun onStatusChanged(provider: String?, status: Int, extras: Bundle?)`
+* `onStatusChanged(provider: String?, status: Int, extras: Bundle?)`
 Called when the provider status changes. This method is called when a provider
 is unable to fetch a location or if the provider has recently become
 available after a period of unavailability.
@@ -73,10 +69,7 @@ Called When the GPS satellite state changes
 
 ``` Kotlin
 class MainActivity : AppCompatActivity(), ILocationListener{
-    fun getLastLocation(location: Location): Location = location
-    fun onLocationChanged(location: Location): Unit {
-        getLastLocation(location)
-    }
+    fun onLocationChanged(location: Location)
     fun onStatusChanged(provider: String?, status: Int, extras: Bundle?) {}
     fun onProviderEnabled(provider: String?){}
     fun onProviderDisabled(provider: String?){}

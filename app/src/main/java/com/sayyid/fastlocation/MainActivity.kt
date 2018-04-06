@@ -17,6 +17,7 @@ import java.text.SimpleDateFormat
 class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks, ILocationListener {
     private val RC_LOCATION: Int = 0
     private var locationEngine: LocationEngine? = null
+    private var mLocation: Location? = null
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
@@ -50,7 +51,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks, I
     }
 
     override fun onLocationChanged(location: Location) {
-        super.onLocationChanged(location)
+        mLocation = location
         ll_root.addView(getNewTextView(
                 "${location.latitude.toString()}, ${location.longitude.toString()}  " +
                         "${SimpleDateFormat("HH:mm:ss").format(location.time)} " +

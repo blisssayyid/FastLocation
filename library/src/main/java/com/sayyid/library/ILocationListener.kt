@@ -9,15 +9,9 @@ import android.os.Bundle
  */
 interface ILocationListener {
     /**
-     * 获得最后的位置
-     */
-    fun getLastLocation(location: Location): Location = location
-    /**
      * 这里根据过滤条件时间上是不稳定的，不能做定时器来用
      */
-    fun onLocationChanged(location: Location): Unit {
-        getLastLocation(location)
-    }
+    fun onLocationChanged(location: Location)
     /**
      * 当定位状态改变的时候
      */
