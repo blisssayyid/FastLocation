@@ -1,8 +1,9 @@
 package com.sayyid.fastlocation
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.location.Location
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -31,6 +32,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks, I
         }
     }
 
+    @SuppressLint("MissingPermission")
     override fun onPermissionsGranted(requestCode: Int, perms: MutableList<String>) {
         when (requestCode) {
             RC_LOCATION -> {
@@ -59,6 +61,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks, I
                         "${location.accuracy}"))
     }
 
+    @SuppressLint("MissingPermission")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -78,6 +81,7 @@ class MainActivity : AppCompatActivity(), EasyPermissions.PermissionCallbacks, I
         }
     }
 
+    @SuppressLint("MissingPermission")
     override fun onDestroy() {
         super.onDestroy()
         locationEngine?.unRegister()

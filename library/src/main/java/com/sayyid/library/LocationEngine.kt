@@ -5,7 +5,7 @@ import android.Manifest.permission.ACCESS_FINE_LOCATION
 import android.annotation.SuppressLint
 import android.content.Context
 import android.location.LocationManager
-import android.support.annotation.RequiresPermission
+import androidx.annotation.RequiresPermission
 
 /**
  * 定位引擎
